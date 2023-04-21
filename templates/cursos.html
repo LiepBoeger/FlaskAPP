@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<h2 style="text-align: center;">Lista de Cursos</h2>
+<hr>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Carga Horária</th>
+          <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for curso in cursos.items %}
+        <tr>
+            <td>{{curso.id}}</td>
+            <td>{{curso.nome}}</td>
+            <td>{{curso.descricao}}</td>
+            <td>{{curso.ch}}</td>
+            <td>
+                <a href="{{curso.id}}/atualiza_curso" class="btn btn-secondary btn-xs">Editar</a>
+                <a href="{{curso.id}}/remove_curso" onclick="return confirm('Deseja excluir este registro?')" class="btn btn-danger btn-xs">Remover</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="{{url_for('cria_curso')}}" class="btn btn-secondary mt-1">Adicionar Curso</a>
+<hr>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {% if cursos.has_prev %}
+    <li class="page-item"><a class="page-link" href="{{url_for('lista_cursos', page=cursos.prev_num)}}">Anterior</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link"  href="{{url_for('lista_cursos', page=cursos.prev_num)}}">Anterior</a></li>
+    {% endif %}
+    {% if cursos.has_next %}
+    <li class="page-item"><a class="page-link" href="{{url_for('lista_cursos', page=cursos.next_num)}}">Próximo</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="{{url_for('lista_cursos', page=cursos.next_num)}}">Próximo</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endblock conteudo %}
+<!-- EXEMPLO DO CURSO, PREFERI O DE CIMA-->
+<!--{% if cursos.has_prev %}-->
+<!--    <a href="{{url_for('lista_cursos', page=cursos.prev_num)}}">Anterior</a>-->
+<!--{% else %}-->
+<!--    Cursos listados-->
+<!--{% endif %}-->
+<!--{% if cursos.has_next %}-->
+<!--    <a href="{{url_for('lista_cursos', page=cursos.next_num)}}">Próximo</a>-->
+<!--{% else %}-->
+<!--    Cursos Listados-->
+<!--{% endif %}-->
