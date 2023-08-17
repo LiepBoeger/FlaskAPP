@@ -1,9 +1,12 @@
 # FlaskAPP
-Página web criada com Flask.
+Web page created with Flask.
 
-Esta página possui recursos diferenciados que abrangem as diferentes funcionalidades do Flask, como por exemplo:
+This page features various functionalities of Flask, such as:
 
-- Cadastro de uma lista de frutas que vão diretamente para uma lista não ordenada em tempo de execução;
-- Cadastro de cursos com campos Id, Nome, Descrição e Carga Horária, com a possibilidade de atualizar e remover estes cursos. Nesta página, também foi implementado o recurso de paginação.
-- Cadastro de uma agenda de notas, com a possiblidadde de adicionar um aluno e sua respectiva nota em um diciónario. Ao clicar em cima do nome do aluno, aparecerá sua nota atribuída.
-- Página que consome a API do site TheMovieDB. Nesta página, podemos acessar os filmes mais populares atualmente, filmes de crianças, filmes de 2010 e filmes do Tom Cruise. Em cada página, podemos também ver uma imagem do filme, uma breve descrição do mesmo e também sua nota média.
+- Registration of a list of fruits that are added directly to an unordered list at runtime.
+  
+- Course registration with fields for ID, Name, Description, and Duration. The ability to update and remove courses is also provided. Pagination functionality has been implemented on this page.
+
+- Agenda for storing notes, allowing the addition of students and their corresponding grades in a dictionary. Clicking on a student's name reveals their assigned grade.
+
+- Page that consumes TheMovieDB API. This page provides access to currently popular movies, children's movies, movies from 2010, and Tom Cruise movies. For each movie, an image, a brief description, and its average rating are displayed.
